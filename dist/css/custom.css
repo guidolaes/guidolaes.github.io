@@ -1,0 +1,1 @@
+.bs-component{position:relative}.bs-component+.bs-component{margin-top:1rem}.source-button{display:none;font-weight:700;position:absolute;right:0;top:0;z-index:100}.source-button i{pointer-events:none}.source-button:hover{cursor:pointer}.bs-component:hover .source-button{display:block}.main-content{margin-top:4rem}

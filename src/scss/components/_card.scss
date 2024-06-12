@@ -1,0 +1,15 @@
+//
+// Base styles
+//
+
+.card {
+  border: none;
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .widget {
+      border-color: #b6b6b6;
+    }
+  }
+}

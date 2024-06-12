@@ -1,0 +1,32 @@
+.bs-component {
+  position: relative;
+  + .bs-component {
+    margin-top: 1rem;
+  }
+}
+
+.source-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  font-weight: 700;
+
+  i {
+    pointer-events: none;
+  }
+}
+
+.source-button:hover {
+  cursor: pointer;
+}
+
+.bs-component:hover .source-button {
+  display: block;
+}
+
+//
+.main-content {
+  margin-top: 4rem;
+}

@@ -1,0 +1,57 @@
+//
+// Divider
+//
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .divider-custom-line {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: #000;
+    border-radius: 1rem;
+    border-color: #000;
+
+    &:first-child {
+      margin-right: 1rem;
+    }
+
+    &:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  .divider-custom-icon {
+    color: #000;
+    font-size: 2rem;
+  }
+
+  &.divider-light {
+    .divider-custom-line {
+      background-color: $white;
+    }
+
+    .divider-custom-icon {
+      color: $white;
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .divider-custom {
+      .divider-custom-line {
+        background-color: $white;
+      }
+
+      .divider-custom-icon {
+        color: $white;
+      }
+    }
+  }
+}

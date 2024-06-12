@@ -1,0 +1,28 @@
+// Portfolio Modal 1
+#portfolioModal1.portfolio-modal.modal.fade(tabindex='-1' aria-labelledby='portfolioModal1' aria-hidden='true')
+  .modal-dialog.modal-xl
+    .modal-content
+      .modal-header.border-0
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body.text-center.pb-5
+        .container
+          .row.justify-content-center
+            .col-lg-8
+              //- Portfolio Modal - Title
+              h2.portfolio-modal-title.text-uppercase.mb-0 Web Municipalidad de Sapallanga
+              //- Icon Divider
+              .divider-custom
+                .divider-custom-line
+                .divider-custom-icon
+                  i.bi.bi-slash-lg
+                .divider-custom-line
+              //- Portfolio Modal - Image
+              img.img-fluid.rounded.mb-5(src='img/web-1.png' alt='Web de Municipalidad de Sapallanga')
+              //- Portfolio Modal - Text
+              img(src="img/icon-wordpress.svg", alt="Icono de wordpress", width="60")
+              p 
+                a(href="https://munisapallanga.gob.pe/", target="_blank", rel="noopener noreferrer") 
+                  | munisapallanga.gob.pe
+              button.btn.btn-primary(data-bs-dismiss='modal')
+                i.fas.fa-xmark.fa-fw
+                | Cerrar

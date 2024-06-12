@@ -1,0 +1,210 @@
+extends ../layouts/layout
+
+append config
+  -pageName = 'Home'
+
+block styles
+
+block scripts 
+
+block content
+  //- About Section
+  section#sobeMi.page-section.mb-0
+    .container
+      //- About Section Heading
+      h2.page-section-heading.text-center
+        | Sobre Mi
+      //- Icon Divider
+      .divider-custom
+        .divider-custom-line
+        .divider-custom-icon
+          i.bi.bi-slash-lg
+        .divider-custom-line
+      //- About Section Content
+      .row
+        .col-lg-4.ms-auto
+          p.lead
+            | Soy una persona responsable, dedicada y perseverante. Tengo una actitud positiva hacia el aprendizaje mostrando un fuerte deseo de adquirir nuevos conocimientos y habilidades. Soy alguien que busca ser útil y aprecia la oportunidad de colaborar en equipo para lograr objetivos comunes.
+        .col-lg-4.me-auto
+          p.lead
+            |  Mi disciplina y enfoque me permiten mantenerme enfocada en mis metas y trabajar de manera constante para alcanzarlas. En general, soy una persona comprometida y motivada que aprovecha al máximo las oportunidades que se me presentan.
+      //- About Section Button
+      h3.text-center.my-3 Redes sociales
+      .text-center.mt-4
+        a.btn.btn-lg.btn-outline-primary(href='https://github.com/guidolaes')
+          i.bi.bi-github.me-2
+          | Github
+        a.btn.btn-lg.btn-outline-primary(href='https://linkedin.com/guidolaes')
+          i.bi.bi-linkedin.me-2
+          | Linkedin
+
+      h3.text-center.my-3 Tecnologías
+      .text-center.mt-3
+        img(src="img/icon-html.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="HTML" width="48")
+        img(src="img/icon-css.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="CSS" width="48")
+        img(src="img/icon-js.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="JS" width="48")
+        img(src="img/icon-scss.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="SCSS" width="48")
+        img(src="img/icon-php.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="PHP" width="48")
+        img(src="img/icon-pug.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="PUG" width="48")
+        img(src="img/icon-mysql.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="MySQL" width="48")
+        img(src="img/icon-wordpress.svg", alt="html" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="WORDRESS" width="48")
+
+  // Portfolio Section
+  section#portfolio.page-section.portfolio
+    .container
+      // Portfolio Section Heading
+      h2.page-section-heading.text-center.mb-0 Portafolio
+      // Icon Divider
+      .divider-custom
+        .divider-custom-line
+        .divider-custom-icon
+          i.bi.bi-slash-lg
+        .divider-custom-line
+      // Portfolio Grid Items
+      .row.justify-content-center
+        //- Portfolio Item 1
+        .col-md-6.col-lg-4.mb-5
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal1')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/web-1.png' alt='Web de Municipalidad de Sapallanga')
+        //- Portfolio Item 2
+        //- .col-md-6.col-lg-4.mb-5
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal2')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/cake.png' alt='...')
+        //- Portfolio Item 3
+        //- .col-md-6.col-lg-4.mb-5
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal3')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/circus.png' alt='...')
+        //- Portfolio Item 4
+        //- .col-md-6.col-lg-4.mb-5.mb-lg-0
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal4')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/game.png' alt='...')
+        //- Portfolio Item 5
+        //- .col-md-6.col-lg-4.mb-5.mb-md-0
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal5')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/safe.png' alt='...')
+        //- Portfolio Item 6
+        //- .col-md-6.col-lg-4
+          .portfolio-item.mx-auto(data-bs-toggle='modal' data-bs-target='#portfolioModal6')
+            .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+              .portfolio-item-caption-content.text-center.text-white
+                i.bi.bi-plus
+            img.img-fluid(src='img/submarine.png' alt='...')
+
+  // About Section
+  section#about.page-section.mb-0
+    .container
+      // About Section Heading
+      h2.page-section-heading.text-center.text-uppercase.mb-0 Certificados
+      //- Icon Divider
+      .divider-custom
+        .divider-custom-line
+        .divider-custom-icon
+          i.bi.bi-slash-lg
+        .divider-custom-line
+      //- About Section Content
+      .row.justify-content-center
+        //- Certificadp Item 1
+        .col-md-6.col-lg-4.mb-5
+          .card
+            img.card-img-top(src="img/cert-1.png" alt="" height="300" style="object-fit: cover;")
+            .card-body
+              h3.h5.text-center HTML y CSS desde CERO
+        .col-md-6.col-lg-4.mb-5
+          .card
+            img.card-img-top(src="img/cert-2.png" alt="" height="300" style="object-fit: cover;")
+            .card-body
+              h3.h5.text-center Introducción a los Algoritmos y la Programación
+        //-.col-md-6.col-lg-4.mb-5
+          .card
+            img.card-img-top(src="img/safe.png" alt="")
+            .card-body
+              h3.h5.text-center Certificado 2
+
+
+  // Contact Section
+  section#contact.page-section
+    .container
+      // Contact Section Heading
+      h2.page-section-heading.text-center.text-uppercase.mb-0 Contacto
+      // Icon Divider
+      .divider-custom
+        .divider-custom-line
+        .divider-custom-icon
+          i.bi.bi-slash-lg
+        .divider-custom-line
+      // Contact Section Form
+      .row.justify-content-center
+        .col-lg-8.col-xl-7
+
+          form#contactForm(method="post")
+
+            // Name input
+            .form-floating.mb-3
+              input#name.form-control(
+                type='text',
+                placeholder='Ingrese su nombre...',
+                data-sb-validations='required'
+              )
+              label(for='name') Nombre
+              .invalid-feedback(data-sb-feedback='name:required')
+                | A name is required.
+
+            // Email address input
+            .form-floating.mb-3
+              input#email.form-control(
+                type='email',
+                placeholder='name@example.com',
+                data-sb-validations='required,email'
+              )
+              label(for='email') Email
+              .invalid-feedback(data-sb-feedback='email:required')
+                | An email is required.
+              .invalid-feedback(data-sb-feedback='email:email')
+                | Email is not valid.
+
+            // Phone number input
+            .form-floating.mb-3
+              input#phone.form-control(
+                type='tel',
+                placeholder='(123) 456-7890',
+                data-sb-validations='required'
+              )
+              label(for='phone') Numero de telefono
+              .invalid-feedback(data-sb-feedback='phone:required')
+                | A phone number is required.
+
+            // Message input
+            .form-floating.mb-3
+              textarea#message.form-control(
+                type='text',
+                placeholder='Enter your message here...',
+                style='height: 10rem;',
+                data-sb-validations='required'
+              )
+              label(for='message') Mensaje
+              .invalid-feedback(data-sb-feedback='message:required')
+                | A message is required.
+
+            // Submit Button
+            .d-grid
+              button#submitButton.btn.btn-primary.btn-lg(type='submit') Enviar
+
+
+
+
+

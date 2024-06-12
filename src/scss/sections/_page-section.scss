@@ -1,0 +1,25 @@
+// Styling for page sections
+.page-section {
+  padding: 6rem 0;
+
+  .page-section-heading {
+    font-size: 2.25rem;
+    line-height: 2rem;
+    color: $black;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .page-section-heading {
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .page-section-heading {
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+//- Navigation
+
+nav#mainNav.navbar.navbar-expand-lg.bg-body.fixed-top(aria-label='Offcanvas navbar large')
+  .container
+    a.navbar-brand(href='#') Guido Euclides Laime Espejo
+    button.navbar-toggler(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar2' aria-controls='offcanvasNavbar2' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+      | Menu
+    #offcanvasNavbar2.offcanvas.offcanvas-start(tabindex='-1' aria-labelledby='offcanvasNavbar2Label')
+      .offcanvas-header
+        h5#offcanvasNavbar2Label.offcanvas-title Guido Euclides Laime Espejo
+        button.btn-close.btn-close-white(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+      .offcanvas-body
+        ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
+          li.nav-item
+            a.nav-link(href='#inicio') Inicio
+          li.nav-item
+            a.nav-link(href='#sobeMi') Sobre Mi
+          li.nav-item
+            a.nav-link(href='#portfolio') Proyectos
+          li.nav-item
+            a.nav-link(href='#about') Certificados
+          li.nav-item
+            a.nav-link(href='#contact') Contacto
+          li.nav-item.dropdown
+            a#bd-theme.nav-link.dropdown-toggle(type='button' aria-expanded='false' data-bs-toggle='dropdown')
+              span#bd-theme-icon.theme-icon-active.mr-1
+                i.bi.bi-sun
+              span#bd-theme-text.visually-hidden Toggle theme
+            ul.dropdown-menu.dropdown-menu-end(aria-labelledby='bd-theme-text')
+              li
+                button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='light' aria-pressed='false')
+                  i.bi.bi-sun.opacity-50.me-2
+                  | Light
+                  i.pr-check.bi.bi-check-lg.ms-auto.d-none
+              li
+                button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='dark' aria-pressed='false')
+                  i.bi.bi-moon.opacity-50.me-2
+                  | Dark
+                  i.pr-check.bi.bi-check-lg.ms-auto.d-none
+              li
+                button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='auto' aria-pressed='true')
+                  i.bi.bi-circle-half.opacity-50.me-2
+                  | Auto
+                  i.pr-check.bi.bi-check-lg.ms-auto.d-none
