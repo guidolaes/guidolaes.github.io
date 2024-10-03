@@ -1,0 +1,20 @@
+.bg-custom-gradient {
+  position: fixed;
+  top: 0;
+  z-index: -2;
+  height: 100vh; // h-screen
+  width: 100vw; // w-screen
+  background-color: #ffffff; // bg-neutral-950
+  background-image: radial-gradient(125% 125% at 50% 10%, #fff 40%, #f05 100%);
+}
+
+[data-theme="dark"] {
+  .bg-custom-gradient {
+    background-color: #000;
+    background-image: radial-gradient(
+      125% 125% at 50% 10%,
+      #000 40%,
+      #f05 100%
+    );
+  }
+}

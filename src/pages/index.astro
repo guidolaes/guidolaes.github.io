@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+
+import {iconPaths} from '../components/IconPaths';
+
+const allProjects = await getCollection("projects");
+const allPosts = await getCollection("blog");
+
+const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
+	{ label: 'Twitter', href: 'https://twitter.com/pirulug', icon: 'twitter'},
+	{ label: 'Twitch', href: 'https://twitch.tv/pirulug', icon: 'twitch' },
+	{ label: 'GitHub', href: 'https://github.com/pirulug', icon: 'github' },
+	{ label: 'YouTube', href: 'https://www.youtube.com/@pirulug/', icon: 'youtube' },
+];
+---
+
+<Layout>
+	<div class="header">
+		<div class="header__text">
+			<h2>Hi, I'm Guido Laes</h2>
+			<p>Soy una persona responsable, dedicada y perseverante. Tengo una actitud positiva hacia el aprendizaje mostrando un fuerte deseo de adquirir nuevos conocimientos y habilidades. Soy alguien que busca ser útil y aprecia la oportunidad de colaborar en equipo para lograr objetivos comunes.</p>
+			<p>Mi disciplina y enfoque me permiten mantenerme enfocada en mis metas y trabajar de manera constante para alcanzarlas. En general, soy una persona comprometida y motivada que aprovecha al máximo las oportunidades que se me presentan.</p>
+			<div class="header__socials">
+				{
+					iconLinks.map(({ href, icon, label }) => (
+						<a href={href} set:html={iconPaths[icon]}>
+							<span class="sr-only">{label}</span>
+						</a>
+					))
+				}
+			</div>
+		</div>
+		<div class="header__image">
+			<img class="img-fluid" src="avatar.webp" alt="">
+		</div>
+	</div>
+
+	<div class="projects">
+		<h3>Mis proyectos</h3>
+		<div class="projects__list">
+			{
+				allProjects.slice(-4).map((project, index)=>(
+					<div class={`projects__content ${index % 2 === 0 ? 'left' : 'right'}`}>
+						<div class="projects__content-image">
+							<img src={project.data.image.url} alt="">
+						</div>
+						<div class="projects__content-description">
+							<h2>{project.data.title}</h2>
+							<p>
+								{project.data.description}
+							</p>
+							<div class="tecnologias">
+								{project.data.stack.split(', ').map((tech) => (
+									<div
+										class="tecnologias__icon"
+										title={tech}
+										set:html={tech in iconPaths ? iconPaths[tech as keyof typeof iconPaths] : ""}
+									></div>
+								))}
+							</div>
+							<a class="btn" href={project.slug} set:html={iconPaths.github}>
+								<span>Codigo</span>
+							</a>
+							<a class="btn" href={project.slug} set:html={iconPaths.link}>
+								<span>Preview</span> 
+							</a>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+	
+	<div class="posts">
+		<h3>Mis publicaciones</h3>
+		<ul class="posts__list">
+			{
+				allPosts.map((post)=>(
+					<li>
+						<a class="btn-tag" href="" ># TAG</a>
+						<i class="date">01/08/2024</i>
+						<a class="post-title" href={post.slug}>
+							<span>{post.data.title}</span>
+							</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</Layout>
+
+<style>
+.tecnologias__icon{
+	width: 1rem;
+}
+</style>

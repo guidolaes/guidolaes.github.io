@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+import Card from "../components/CardPost.astro";
+const allPosts = await getCollection("blog");
+
+const pageTitle="Pirulug | Blog"
+---
+
+<Layout pageTitle={pageTitle}>
+
+	<h2 class="my-3 text-cen">Blog</h2>
+	<div role="list" class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+			{
+					allPosts.map((cardPost) => (
+							<Card
+									url={`/blog/${cardPost.slug}/`}
+									image={cardPost.data.image.url}
+									title={cardPost.data.title}
+									date={cardPost.data.date}
+							/>
+					))
+			}
+	</div>
+</Layout>
