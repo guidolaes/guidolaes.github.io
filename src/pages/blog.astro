@@ -11,16 +11,27 @@ const pageTitle="Pirulug | Blog"
 <Layout pageTitle={pageTitle}>
 
 	<h2 class="my-3 text-cen">Blog</h2>
-	<div role="list" class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-			{
-					allPosts.map((cardPost) => (
-							<Card
-									url={`/blog/${cardPost.slug}/`}
-									image={cardPost.data.image.url}
-									title={cardPost.data.title}
-									date={cardPost.data.date}
-							/>
-					))
-			}
+	<div role="list" class="posts">
+
+	<div class="posts__list">
+		{
+			allPosts.map((post)=>(
+				<div class="post__card">
+					<a href={post.slug}>
+						<img class="post-img" src={post.data.image.url} alt="">
+					</a>
+					<div class="post-tag">
+						<a href=""># TAG</a>
+						<a href=""># TAG</a>
+						<a href=""># TAG</a>
+					</div>
+					<i class="post-date">01/08/2024</i>
+					<a class="post-title" href={post.slug}>
+						<span>{post.data.title}</span>
+					</a>
+				</div>
+			))
+		}
+	</div>
 	</div>
 </Layout>

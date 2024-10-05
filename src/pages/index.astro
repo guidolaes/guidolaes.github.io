@@ -75,19 +75,23 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	
 	<div class="posts">
 		<h3>Mis publicaciones</h3>
-		<ul class="posts__list">
+		<div class="posts__list">
 			{
 				allPosts.map((post)=>(
-					<li>
-						<a class="btn-tag" href="" ># TAG</a>
-						<i class="date">01/08/2024</i>
-						<a class="post-title" href={post.slug}>
+					<div class="post__card">
+						<div class="post-tag">
+							<a href=""># TAG</a>
+							<a href=""># TAG</a>
+							<a href=""># TAG</a>
+						</div>
+						<i class="post-date">01/08/2024</i>
+						<a class="post-title" href={"blog/"+post.slug}>
 							<span>{post.data.title}</span>
-							</a>
-					</li>
+						</a>
+					</div>
 				))
 			}
-		</ul>
+		</div>
 	</div>
 </Layout>
 

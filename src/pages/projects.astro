@@ -1,19 +1,43 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import {iconPaths} from '../components/IconPaths';
 const allProjects = await getCollection("projects");
 const pageTitle = "Works";
 ---
 <Layout pageTitle={pageTitle}>
     <h2>Projects</h2>
-    <ul role="list" class="link-card-grid">
-        {allProjects.map((card) => <Card 
-            url={`/projects/${card.slug}/`} 
-            image={card.data.image.url} 
-            title={card.data.title} 
-            body={card.data.description}
-        />)}
-    </ul>
+    <div class="projects__list">
+        {
+            allProjects.slice(-4).map((project, index)=>(
+                <div class={`projects__content ${index % 2 === 0 ? 'left' : 'right'}`}>
+                    <div class="projects__content-image">
+                        <img src={project.data.image.url} alt="">
+                    </div>
+                    <div class="projects__content-description">
+                        <h2>{project.data.title}</h2>
+                        <p>
+                            {project.data.description}
+                        </p>
+                        <div class="tecnologias">
+                            {project.data.stack.split(', ').map((tech) => (
+                                <div
+                                    class="tecnologias__icon"
+                                    title={tech}
+                                    set:html={tech in iconPaths ? iconPaths[tech as keyof typeof iconPaths] : ""}
+                                ></div>
+                            ))}
+                        </div>
+                        <a class="btn" href={project.slug} set:html={iconPaths.github}>
+                            <span>Codigo</span>
+                        </a>
+                        <a class="btn" href={project.slug} set:html={iconPaths.link}>
+                            <span>Preview</span> 
+                        </a>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
 </Layout>
 

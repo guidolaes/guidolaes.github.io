@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+[data-theme="dark"] {
+  body {
+    background: #000;
+    color: #fff;
+  }
+}
+
+svg.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
