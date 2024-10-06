@@ -1,33 +1,91 @@
-<!DOCTYPE html><html lang="es" data-theme="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><style>*,*:after,*:before{box-sizing:border-box}body{font-family:Fira Code,monospace;margin:0;padding:0}[data-theme=dark] body{background:#000;color:#fff}svg.icon{width:1.5rem;height:1.5rem}.bg-custom-gradient{position:fixed;top:0;z-index:-2;height:100vh;width:100vw;background-color:#fff;background-image:radial-gradient(125% 125% at 50% 10%,#fff 40%,#f05)}[data-theme=dark] .bg-custom-gradient{background-color:#000;background-image:radial-gradient(125% 125% at 50% 10%,#000 40%,#f05)}.container{width:1024px;margin:0 auto}.header{display:flex;gap:1.5rem;margin:5rem 0}.header__text p{text-align:justify}.header__socials a{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;color:#000;padding:.5rem;margin-right:.3rem;border-radius:.5rem;border:solid 1px #000}.header__socials a svg{width:1rem;height:1rem;margin-left:.5rem}.header__socials a svg.twitter path{fill:#000}.header__socials a svg.github{fill:#000}.header__image img{width:300px;height:300px;object-fit:cover;border-radius:50%}[data-theme=dark] .header__text p{text-align:justify}[data-theme=dark] .header__socials a{color:#fff;border-color:#fff}[data-theme=dark] svg.twitter path{fill:#fff}[data-theme=dark] svg.github{fill:#fff}.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}.navbar-brand{color:#000;text-decoration:none;font-size:1.5rem;font-weight:700}.navbar-nav{padding:0;margin:0;display:flex;align-items:center;justify-content:center}.nav-item{list-style:none;padding:0;margin:0;display:inline-block}.nav-link{color:#000;text-decoration:none;display:inline-block;margin-right:.5rem;border-bottom:solid 2px transparent}.nav-link:hover,.nav-link.active{border-bottom:solid 2px #fff}.btn__dali{background:transparent;color:#e8f130;border:0}.btn__dali:hover{cursor:pointer}[data-theme=dark] .navbar-brand,[data-theme=dark] .nav-link{color:#fff}[data-theme=dark] .btn__dali{color:#245bf0}.posts__list{margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1rem}.post__card{display:block;border:solid 1px #000;margin-bottom:.5rem;padding:.5rem;border-radius:.5rem;flex:1 1 100%;transition:all .4s}@media (min-width: 768px){.post__card{flex:1 1 calc(50% - 1rem)}}@media (min-width: 1024px){.post__card{flex:1 1 calc(25% - 1rem)}}.post__card:hover{background:#0000004d;border-color:transparent}.post-img{width:100%;height:8rem;border-radius:.5rem;object-fit:cover}.post-tag{display:block;font-size:.6rem}.post-tag a{display:inline-block;background:#f05;padding:.2rem .3rem;text-decoration:none;border-radius:.5rem;color:#fff}.post-date{font-size:.8rem;margin-top:.5rem;display:block;font-style:normal}.post-title{display:block;text-decoration:none;color:#000;margin-top:1rem;text-align:justify;font-weight:700;overflow:hidden;width:100%;text-overflow:ellipsis;max-height:3lh}[data-theme=dark] .post__card{border-color:#fff}[data-theme=dark] .post__card:hover{background:#ffffff4d;border-color:transparent}[data-theme=dark] .post-title{color:#fff}.projects__list{margin:0;padding:0;list-style:none}.projects__list li a{color:#000;text-decoration:none;transition:all .3s}.projects__list li a:hover{text-decoration:underline}.projects__content{display:flex;align-items:center;margin:1rem 0;gap:1rem}.projects__content-image img{width:450px;border-radius:.5rem}.projects__content.left{flex-direction:row}.projects__content.right{flex-direction:row-reverse}.projects__content .btn{display:inline-flex;justify-content:center;align-items:center;padding:.3rem .5rem;text-decoration:none;color:#000;border:solid 1px #000;border-radius:.5rem;transition:all .3s}.projects__content .btn svg.icon{margin-left:.5rem}.projects__content .btn:hover{background:#ececec}.tecnologias{margin:.5rem 0}.tecnologias__icon{display:inline-block;margin-right:1rem}[data-theme=dark] .projects__list li a{color:#fff}[data-theme=dark] .projects__content .btn{color:#fff;border-color:#fff}[data-theme=dark] .projects__content .btn:hover{color:#000}.astro-code{padding:.5rem;border-radius:.5rem}
-</style><script type="module">(()=>{const n=()=>{const e=localStorage.getItem("theme");return e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")},i=e=>{document.documentElement.setAttribute("data-theme",e)},c=e=>{const t=document.querySelector("#bd-theme-icon");t&&(e==="light"?t.innerHTML=`
+<!DOCTYPE html><html lang="es" data-theme="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title><link rel="stylesheet" href="/_astro/blog.DbrwQQez.css"><script type="module">(()=>{const n=()=>{const e=localStorage.getItem("theme");return e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")},i=e=>{document.documentElement.setAttribute("data-theme",e)},c=e=>{const t=document.querySelector("#bd-theme-icon");t&&(e==="light"?t.innerHTML=`
 <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`:e==="dark"&&(t.innerHTML=`
 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`))},l=()=>{const t=n()==="light"?"dark":"light";localStorage.setItem("theme",t),i(t),c(t)};window.addEventListener("DOMContentLoaded",()=>{const e=n();i(e),c(e);const t=document.querySelector("#bd-theme-toggle");t&&t.addEventListener("click",l)})})();
-</script></head> <body> <div class="bg-custom-gradient"></div> <main class="container" style="/*margin-top: 3.5rem;*/"> <div class="navbar"> <a class="navbar-brand" href="../">PiruUI</a> <ul class="navbar-nav"> <li class="nav-item"> <a class="nav-link" href="/"> Home </a> </li><li class="nav-item"> <a class="nav-link active" href="/blog/"> Blog </a> </li><li class="nav-item"> <a class="nav-link" href="/projects/"> Projects </a> </li> <li class="nav-item"> <button class="btn__dali" id="bd-theme-toggle" type="button"> <span class="theme-icon-active mr-1"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="" id="bd-theme-icon"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> </span> </button> </li> </ul> </div>  <h2 id="setup">Setup</h2>
+</script></head> <body> <div class="bg-custom-gradient"></div> <main class="container"> <nav class="navbar"> <div class="navbar-brand"> <a href="index.html" class="brand">Guido Laes</a> <div style="display: flex;gap:1rem;align-items: center;"> <button class="btn__dali" id="bd-theme-toggle" type="button"> <span class="theme-icon-active mr-1"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="" id="bd-theme-icon"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg> </span> </button> <div class="burger" id="burger"> <span class="burger-line"></span> <span class="burger-line"></span> <span class="burger-line"></span> </div> </div> </div> <div class="navbar-menu" id="menu"> <ul class="menu"> <li class="menu-item"> <a class="menu-link" href="/"> Home </a> </li><li class="menu-item"> <a class="menu-link active" href="/blog/"> Blog </a> </li><li class="menu-item"> <a class="menu-link" href="/projects/"> Projects </a> </li> </ul> </div> </nav> <script>
+  // Toggle to show and hide navbar menu
+const navbarMenu = document.getElementById("menu");
+const burgerMenu = document.getElementById("burger");
+
+burgerMenu.addEventListener("click", () => {
+  navbarMenu.classList.toggle("is-active");
+  burgerMenu.classList.toggle("is-active");
+});
+
+// Toggle to show and hide dropdown menu
+const dropdown = document.querySelectorAll(".dropdown");
+
+dropdown.forEach((item) => {
+  const dropdownToggle = item.querySelector(".dropdown-toggle");
+
+  dropdownToggle.addEventListener("click", () => {
+    const dropdownShow = document.querySelector(".dropdown-show");
+    toggleDropdownItem(item);
+
+    // Remove 'dropdown-show' class from other dropdown
+    if (dropdownShow && dropdownShow != item) {
+      toggleDropdownItem(dropdownShow);
+    }
+  });
+});
+
+// Function to display the dropdown menu
+const toggleDropdownItem = (item) => {
+  const dropdownContent = item.querySelector(".dropdown-content");
+
+  // Remove other dropdown that have 'dropdown-show' class
+  if (item.classList.contains("dropdown-show")) {
+    dropdownContent.removeAttribute("style");
+    item.classList.remove("dropdown-show");
+  } else {
+    // Added max-height on active 'dropdown-show' class
+    dropdownContent.style.height = dropdownContent.scrollHeight + "px";
+    item.classList.add("dropdown-show");
+  }
+};
+
+// Fixed dropdown menu on window resizing
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 992) {
+    document.querySelectorAll(".dropdown-content").forEach((item) => {
+      item.removeAttribute("style");
+    });
+    dropdown.forEach((item) => {
+      item.classList.remove("dropdown-show");
+    });
+  }
+});
+
+// Fixed navbar menu on window resizing
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 992) {
+    if (navbarMenu.classList.contains("is-active")) {
+      navbarMenu.classList.remove("is-active");
+      burgerMenu.classList.remove("is-active");
+    }
+  }
+});
+</script>  <h2 id="setup">Setup</h2>
 <p>We’re building a Webpack project with Bootstrap from scratch, so there are some prerequisites and up front steps before we can really get started. This guide requires you to have Node.js installed and some familiarity with the terminal.</p>
 <ol>
 <li>
 <p><strong>Create a project folder and setup npm.</strong>  We’ll create the  <code>my-project</code>  folder and initialize npm with the  <code>-y</code>  argument to avoid it asking us all the interactive questions.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> my-project</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my-project</span></span>
 <span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> init</span><span style="color:#79B8FF"> -y</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p><strong>Install Webpack.</strong>  Next we need to install our Webpack development dependencies:  <code>webpack</code>  for the core of Webpack,  <code>webpack-cli</code>  so we can run Webpack commands from the terminal, and  <code>webpack-dev-server</code>  so we can run a local development server. We use  <code>--save-dev</code>  to signal that these dependencies are only for development use and not for production.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> i</span><span style="color:#79B8FF"> --save-dev</span><span style="color:#9ECBFF"> webpack</span><span style="color:#9ECBFF"> webpack-cli</span><span style="color:#9ECBFF"> webpack-dev-server</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p><strong>Install Bootstrap.</strong>  Now we can install Bootstrap. We’ll also install Popper since our dropdowns, popovers, and tooltips depend on it for their positioning. If you don’t plan on using those components, you can omit Popper here.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> i</span><span style="color:#79B8FF"> --save</span><span style="color:#9ECBFF"> bootstrap</span><span style="color:#9ECBFF"> @popperjs/core</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p><strong>Install additional dependencies.</strong>  In addition to Webpack and Bootstrap, we need a few more dependencies to properly import and bundle Bootstrap’s CSS and JS with Webpack. These include Sass, some loaders, and Autoprefixer.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> i</span><span style="color:#79B8FF"> --save-dev</span><span style="color:#9ECBFF"> autoprefixer</span><span style="color:#9ECBFF"> css-loader</span><span style="color:#9ECBFF"> postcss-loader</span><span style="color:#9ECBFF"> sass</span><span style="color:#9ECBFF"> sass-loader</span><span style="color:#9ECBFF"> style-loader</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 </ol>
@@ -36,7 +94,6 @@
 <p>We’ve already created the  <code>my-project</code>  folder and initialized npm. Now we’ll also create our  <code>src</code>  and  <code>dist</code>  folders to round out the project structure. Run the following from  <code>my-project</code>, or manually create the folder and file structure shown below.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> {dist,src,src/js,src/scss}</span></span>
 <span class="line"><span style="color:#B392F0">touch</span><span style="color:#9ECBFF"> dist/index.html</span><span style="color:#9ECBFF"> src/js/main.js</span><span style="color:#9ECBFF"> src/scss/styles.scss</span><span style="color:#9ECBFF"> webpack.config.js</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p>When you’re done, your complete project should look like this:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>my-project/</span></span>
@@ -50,7 +107,6 @@
 <span class="line"><span>├── package-lock.json</span></span>
 <span class="line"><span>├── package.json</span></span>
 <span class="line"><span>└── webpack.config.js</span></span>
-<span class="line"><span></span></span>
 <span class="line"><span></span></span></code></pre>
 <p>At this point, everything is in the right place, but Webpack won’t work because we haven’t filled in our  <code>webpack.config.js</code>  yet.</p>
 <h2 id="configure-webpack">Configure Webpack<a href="https://getbootstrap.com/docs/5.3/getting-started/webpack/#configure-webpack"></a></h2>
@@ -72,7 +128,6 @@
 <span class="line"><span style="color:#E1E4E8">    hot: </span><span style="color:#79B8FF">true</span></span>
 <span class="line"><span style="color:#E1E4E8">  }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
@@ -92,7 +147,6 @@
 <span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./main.js"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
 <span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p>We’re including a little bit of Bootstrap styling here with the  <code>div class="container"</code>  and  <code>&#x3C;button></code>  so that we see when Bootstrap’s CSS is loaded by Webpack.</p>
 </li>
@@ -106,13 +160,11 @@
 <span class="line"><span style="color:#E1E4E8">  },</span></span>
 <span class="line"><span style="color:#6A737D">  // ...</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 </li>
 <li>
 <p><strong>And finally, we can start Webpack.</strong>  From the  <code>my-project</code>  folder in your terminal, run that newly added npm script:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> start</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p><img src="https://getbootstrap.com/docs/5.3/assets/img/guides/webpack-dev-server.png" alt="Webpack dev server running"></p>
 </li>
@@ -165,7 +217,6 @@
 <span class="line"><span style="color:#E1E4E8">    ]</span></span>
 <span class="line"><span style="color:#E1E4E8">  }</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p>Here’s a recap of why we need all these loaders.  <code>style-loader</code>  injects the CSS into a  <code>&#x3C;style></code>  element in the  <code>&#x3C;head></code>  of the HTML page,  <code>css-loader</code>  helps with using  <code>@import</code>  and  <code>url()</code>,  <code>postcss-loader</code>  is required for Autoprefixer, and  <code>sass-loader</code>  allows us to use Sass.</p>
 </li>
@@ -173,7 +224,6 @@
 <p><strong>Now, let’s import Bootstrap’s CSS.</strong>  Add the following to  <code>src/scss/styles.scss</code>  to import all of Bootstrap’s source Sass.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="scss"><code><span class="line"><span style="color:#6A737D">// Import all of Bootstrap's CSS</span></span>
 <span class="line"><span style="color:#F97583">@import</span><span style="color:#9ECBFF"> "~bootstrap/scss/bootstrap"</span><span style="color:#E1E4E8">;</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p><em>You can also import our stylesheets individually if you want.  <a href="https://getbootstrap.com/docs/5.3/customize/sass/#importing">Read our Sass import docs</a>  for details.</em></p>
 </li>
@@ -184,14 +234,12 @@
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// Import all of Bootstrap's JS</span></span>
 <span class="line"><span style="color:#F97583">import</span><span style="color:#79B8FF"> *</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> bootstrap </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'bootstrap'</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p>You can also import JavaScript plugins individually as needed to keep bundle sizes down:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Alert </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'bootstrap/js/dist/alert'</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D">// or, specify which plugins you need:</span></span>
 <span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Tooltip, Toast, Popover } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'bootstrap'</span></span>
-<span class="line"></span>
 <span class="line"></span></code></pre>
 <p><em><a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/">Read our JavaScript docs</a>  for more information on how to use Bootstrap’s plugins.</em></p>
 </li>
