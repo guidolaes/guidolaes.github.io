@@ -40,6 +40,20 @@
       flex-direction: row-reverse;
     }
 
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1.5rem 0;
+
+      &.left {
+        flex-direction: row;
+      }
+
+      &.right {
+        flex-direction: row;
+      }
+    }
+
     .btn {
       display: inline-flex;
       justify-content: center;

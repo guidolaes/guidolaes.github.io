@@ -9,7 +9,7 @@ const pageTitle = "Works";
     <h2>Projects</h2>
     <div class="projects__list">
         {
-            allProjects.slice(-4).map((project, index)=>(
+            allProjects.map((project, index)=>(
                 <div class={`projects__content ${index % 2 === 0 ? 'left' : 'right'}`}>
                     <div class="projects__content-image">
                         <img src={project.data.image.url} alt="">
@@ -28,10 +28,10 @@ const pageTitle = "Works";
                                 ></div>
                             ))}
                         </div>
-                        <a class="btn" href={project.slug} set:html={iconPaths.github}>
+                        <a class="btn" href={project.data.github} target="_blank" set:html={iconPaths.github}>
                             <span>Codigo</span>
                         </a>
-                        <a class="btn" href={project.slug} set:html={iconPaths.link}>
+                        <a class="btn" href={project.data.website} target="_blank" set:html={iconPaths.link}>
                             <span>Preview</span> 
                         </a>
                     </div>

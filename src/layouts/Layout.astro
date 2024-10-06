@@ -4,9 +4,6 @@ import Navibar from "../components/Navibar.astro"
 
 import "../styles/app.scss"
 
-// import "../piruui/css/piruui.css"
-// import "../piruui/js/piruui.js"
-
 const {pageTitle} = Astro.props
 ---
 
@@ -20,7 +17,7 @@ const {pageTitle} = Astro.props
 <body>
   <div class="bg-custom-gradient"></div>
 
-  <main class="container" style="/*margin-top: 3.5rem;*/">
+  <main class="container">
     <Navibar/>
     <slot/>
     <Footer/>

@@ -6,36 +6,109 @@ const textLinks: { label: string; href: string }[] = [
 ];
 ---
 
-<div class="navbar">
-  <a class="navbar-brand" href="../">PiruUI</a>
-  
-  <ul class="navbar-nav">
-    {
-      textLinks.map(({ label, href }) => (
-        <li class="nav-item" >
-          <a 
-            aria-current={Astro.url.pathname === href}
-            class:list={[
-            'nav-link',
-              {
-                active:
-                  Astro.url.pathname === href ||
-                  (href !== '/' && Astro.url.pathname.startsWith(href)),
-              },
-            ]}
-            href={href}
-          >
-            {label}
-          </a>
-        </li>
-      ))
-    }
-    <li class="nav-item">
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="index.html" class="brand">Guido Laes</a>
+    <div style="display: flex;gap:1rem;align-items: center;">
       <button class="btn__dali" id="bd-theme-toggle" type="button">
         <span class="theme-icon-active mr-1" >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="" id="bd-theme-icon"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </span>
       </button>
-    </li>
-  </ul>
-</div>
+      <div class="burger" id="burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-menu" id="menu">
+    <ul class="menu">
+      {
+        textLinks.map(({ label, href }) => (
+          <li class="menu-item" >
+            <a 
+              aria-current={Astro.url.pathname === href}
+              class:list={[
+              'menu-link',
+                {
+                  active:
+                    Astro.url.pathname === href ||
+                    (href !== '/' && Astro.url.pathname.startsWith(href)),
+                },
+              ]}
+              href={href}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  // Toggle to show and hide navbar menu
+const navbarMenu = document.getElementById("menu");
+const burgerMenu = document.getElementById("burger");
+
+burgerMenu.addEventListener("click", () => {
+  navbarMenu.classList.toggle("is-active");
+  burgerMenu.classList.toggle("is-active");
+});
+
+// Toggle to show and hide dropdown menu
+const dropdown = document.querySelectorAll(".dropdown");
+
+dropdown.forEach((item) => {
+  const dropdownToggle = item.querySelector(".dropdown-toggle");
+
+  dropdownToggle.addEventListener("click", () => {
+    const dropdownShow = document.querySelector(".dropdown-show");
+    toggleDropdownItem(item);
+
+    // Remove 'dropdown-show' class from other dropdown
+    if (dropdownShow && dropdownShow != item) {
+      toggleDropdownItem(dropdownShow);
+    }
+  });
+});
+
+// Function to display the dropdown menu
+const toggleDropdownItem = (item) => {
+  const dropdownContent = item.querySelector(".dropdown-content");
+
+  // Remove other dropdown that have 'dropdown-show' class
+  if (item.classList.contains("dropdown-show")) {
+    dropdownContent.removeAttribute("style");
+    item.classList.remove("dropdown-show");
+  } else {
+    // Added max-height on active 'dropdown-show' class
+    dropdownContent.style.height = dropdownContent.scrollHeight + "px";
+    item.classList.add("dropdown-show");
+  }
+};
+
+// Fixed dropdown menu on window resizing
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 992) {
+    document.querySelectorAll(".dropdown-content").forEach((item) => {
+      item.removeAttribute("style");
+    });
+    dropdown.forEach((item) => {
+      item.classList.remove("dropdown-show");
+    });
+  }
+});
+
+// Fixed navbar menu on window resizing
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 992) {
+    if (navbarMenu.classList.contains("is-active")) {
+      navbarMenu.classList.remove("is-active");
+      burgerMenu.classList.remove("is-active");
+    }
+  }
+});
+</script>

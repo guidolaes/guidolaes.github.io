@@ -1,6 +1,6 @@
 ---
-title: 'We’re building a Webpack project with Bootstrap from scratch, so there are some prerequisites and up front steps before we can really get started. This guide requires you to have Node.js installed and some familiarity with the terminal.'
-author: Tristen Tomczak
+title: 'Bootstrap & webpack'
+author: Guido LaEs
 date: '09-09-2024'
 image:
     url: https://getbootstrap.com/docs/5.3/assets/img/guides/bootstrap-webpack.png
@@ -16,28 +16,24 @@ We’re building a Webpack project with Bootstrap from scratch, so there are som
     ```sh
     mkdir my-project && cd my-project
     npm init -y
-    
     ```
     
 2.  **Install Webpack.**  Next we need to install our Webpack development dependencies:  `webpack`  for the core of Webpack,  `webpack-cli`  so we can run Webpack commands from the terminal, and  `webpack-dev-server`  so we can run a local development server. We use  `--save-dev`  to signal that these dependencies are only for development use and not for production.
     
     ```sh
     npm i --save-dev webpack webpack-cli webpack-dev-server
-    
     ```
     
 3.  **Install Bootstrap.**  Now we can install Bootstrap. We’ll also install Popper since our dropdowns, popovers, and tooltips depend on it for their positioning. If you don’t plan on using those components, you can omit Popper here.
     
     ```sh
     npm i --save bootstrap @popperjs/core
-    
     ```
     
 4.  **Install additional dependencies.**  In addition to Webpack and Bootstrap, we need a few more dependencies to properly import and bundle Bootstrap’s CSS and JS with Webpack. These include Sass, some loaders, and Autoprefixer.
     
     ```sh
     npm i --save-dev autoprefixer css-loader postcss-loader sass sass-loader style-loader
-    
     ```
     
 
@@ -50,7 +46,6 @@ We’ve already created the  `my-project`  folder and initialized npm. Now we’
 ```sh
 mkdir {dist,src,src/js,src/scss}
 touch dist/index.html src/js/main.js src/scss/styles.scss webpack.config.js
-
 ```
 
 When you’re done, your complete project should look like this:
@@ -67,7 +62,6 @@ my-project/
 ├── package-lock.json
 ├── package.json
 └── webpack.config.js
-
 ```
 
 At this point, everything is in the right place, but Webpack won’t work because we haven’t filled in our  `webpack.config.js`  yet.
@@ -93,7 +87,6 @@ With dependencies installed and our project folder ready for us to start coding,
         hot: true
       }
     }
-    
     ```
     
 2.  **Next we fill in our  `dist/index.html`.**  This is the HTML page Webpack will load in the browser to utilize the bundled CSS and JS we’ll add to it in later steps. Before we can do that, we have to give it something to render and include the  `output`  JS from the previous step.
@@ -114,7 +107,6 @@ With dependencies installed and our project folder ready for us to start coding,
         <script src="./main.js"></script>
       </body>
     </html>
-    
     ```
     
     We’re including a little bit of Bootstrap styling here with the  `div class="container"`  and  `<button>`  so that we see when Bootstrap’s CSS is loaded by Webpack.
@@ -130,14 +122,12 @@ With dependencies installed and our project folder ready for us to start coding,
       },
       // ...
     }
-    
     ```
     
 4.  **And finally, we can start Webpack.**  From the  `my-project`  folder in your terminal, run that newly added npm script:
     
     ```sh
     npm start
-    
     ```
     
     ![Webpack dev server running](https://getbootstrap.com/docs/5.3/assets/img/guides/webpack-dev-server.png)
@@ -193,7 +183,6 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
         ]
       }
     }
-    
     ```
     
     Here’s a recap of why we need all these loaders.  `style-loader`  injects the CSS into a  `<style>`  element in the  `<head>`  of the HTML page,  `css-loader`  helps with using  `@import`  and  `url()`,  `postcss-loader`  is required for Autoprefixer, and  `sass-loader`  allows us to use Sass.
@@ -203,7 +192,6 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
     ```scss
     // Import all of Bootstrap's CSS
     @import "~bootstrap/scss/bootstrap";
-    
     ```
     
     _You can also import our stylesheets individually if you want.  [Read our Sass import docs](https://getbootstrap.com/docs/5.3/customize/sass/#importing)  for details._
@@ -216,7 +204,6 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
     
     // Import all of Bootstrap's JS
     import * as bootstrap from 'bootstrap'
-    
     ```
     
     You can also import JavaScript plugins individually as needed to keep bundle sizes down:
@@ -226,7 +213,6 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
     
     // or, specify which plugins you need:
     import { Tooltip, Toast, Popover } from 'bootstrap'
-    
     ```
     
     _[Read our JavaScript docs](https://getbootstrap.com/docs/5.3/getting-started/javascript/)  for more information on how to use Bootstrap’s plugins._
